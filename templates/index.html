@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Movie Recommendation System</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <h1 class="mt-5">Personalized Movie Recommendation System</h1>
+    <form method="post" action="/recommend" class="mt-4">
+        <div class="form-group">
+            <label for="user_id">User ID:</label>
+            <input type="number" class="form-control" id="user_id" name="user_id" required>
+        </div>
+        <div class="form-group">
+            <label for="method">Recommendation Method:</label>
+            <select class="form-control" id="method" name="method">
+                <option value="hybrid" selected>Hybrid</option>
+                <option value="collaborative">Collaborative</option>
+                <option value="content">Content-Based</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Get Recommendations</button>
+    </form>
+    <hr>
+    {% if recommendations %}
+    <h2>Recommendations for User {{ user_id }} (Method: {{ method }})</h2>
+    <ul class="list-group mt-3">
+        {% for rec in recommendations %}
+        <li class="list-group-item">{{ rec.title }} (Movie ID: {{ rec.movieId }})</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+</div>
+</body>
+</html>
