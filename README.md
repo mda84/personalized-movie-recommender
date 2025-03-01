@@ -60,7 +60,7 @@ personalized-movie-recommender/
 ## Installation
 ### Clone the Repository
 ```
-git clone https://github.com/yourusername/personalized-movie-recommender.git
+git clone https://github.com/mda84/personalized-movie-recommender.git
 cd personalized-movie-recommender
 ```
 ### Set Up Virtual Environment and Install Dependencies
